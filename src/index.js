@@ -7,7 +7,7 @@ import "bootstrap/dist/css/bootstrap.css";
 
 var element = (
   <div>
-    <h1>Hello World, You good</h1>
+    <button class="btn btn-primary">Hello World, You good</button>
   </div>
 );
 
