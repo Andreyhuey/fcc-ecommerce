@@ -2,18 +2,26 @@ import React, { Component } from "react";
 import Product from "./Product";
 
 export default class ShoppingCart extends Component {
-  state = {
-    products: [
-      { id: 1, productsName: "iPhone 13", price: 8900, quantity: 0 },
-      { id: 2, productsName: "Sony Camera", price: 4500, quantity: 0 },
-      { id: 3, productsName: "Samsung QLED TV", price: 7745, quantity: 0 },
-      { id: 4, productsName: "iPad Pro", price: 12400, quantity: 0 },
-      { id: 5, productsName: "Xbox", price: 7780, quantity: 0 },
-      { id: 6, productsName: "Dell Monitor", price: 8900, quantity: 0 },
-    ],
-  };
+  // Executes when the component is mounted
+  constructor() {
+    console.log("constructor - ShoppingCart");
+    super(); //calling the super class's constructor
+    // intialization of the state
+    this.state = {
+      products: [
+        { id: 1, productsName: "iPhone 13", price: 8900, quantity: 0 },
+        { id: 2, productsName: "Sony Camera", price: 4500, quantity: 0 },
+        { id: 3, productsName: "Samsung QLED TV", price: 7745, quantity: 0 },
+        { id: 4, productsName: "iPad Pro", price: 12400, quantity: 0 },
+        { id: 5, productsName: "Xbox", price: 7780, quantity: 0 },
+        { id: 6, productsName: "Dell Monitor", price: 8900, quantity: 0 },
+      ],
+    };
+  }
+  // Constructor Ends Here
 
   render() {
+    console.log("render - ShoppingCart");
     return (
       <>
         <div className="container-fluid">
@@ -40,7 +48,14 @@ export default class ShoppingCart extends Component {
       </>
     );
   }
-  // render here
+  // Render Ends Here
+
+  // Executes after constructor and render method(includes life cycle of child components, if any) of current component.
+  // Perfect time to Update or Use http requests and fetch data from database or any other source
+  componentDidMount() {
+    // fetch data from data source
+    console.log("componentDidMount - ShoppingCart");
+  }
 
   // Executes when the user clicks on + button
   handleIncrement = (product, maxValue) => {
